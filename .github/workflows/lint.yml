@@ -26,3 +26,11 @@ jobs:
       uses: bltavares/actions/shfmt@master
       env:
         SHFMT_ARGS: -d
+
+  super-linter:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+      - name: Lint Code Base
+        uses: docker://github/super-linter:v2.2.2
